@@ -1,0 +1,10 @@
+aws_region  = "eu-central-1"
+name_prefix = "tf-adv-ab"
+project     = "terraform-advanced"
+environment = "dev"
+owner       = "team-platform"
+cost_center = "cc-001"
+
+state_bucket     = "twoj-unikalny-bucket-tf-state-123456"
+state_lock_table = "terraform-locks"
+instance_type    = "t3.micro"

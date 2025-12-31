@@ -1,0 +1,12 @@
+aws_region  = "eu-central-1"
+name_prefix = "tf-adv-ab"
+project     = "terraform-advanced"
+environment = "dev"
+owner       = "team-platform"
+cost_center = "cc-001"
+
+vpc_id = "vpc-xxxxxxxx"
+ingress_rules = {
+  http = { from_port = 80, to_port = 80, protocol = "tcp", cidrs = ["0.0.0.0/0"] }
+  ssh  = { from_port = 22, to_port = 22, protocol = "tcp", cidrs = ["YOUR_IP/32"] }
+}

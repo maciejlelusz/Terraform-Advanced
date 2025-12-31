@@ -1,0 +1,31 @@
+# Lab 09 — CI/CD: GitHub Actions (fmt/validate/plan)
+
+## Cel
+Szablon pipeline pod enterprise.
+
+## Backend (S3 + DynamoDB)
+1) Skopiuj szablon:
+```bash
+cp ../../00_tooling/backend.hcl.example backend.hcl
+```
+2) Ustaw w `backend.hcl`:
+- `bucket` (z backend-bootstrap)
+- `region`
+- `dynamodb_table`
+- `key = "labs/lab_09/terraform.tfstate"`
+
+## Start
+```bash
+cp terraform.tfvars.example terraform.tfvars
+# uzupełnij terraform.tfvars
+terraform init -backend-config=backend.hcl
+terraform fmt -recursive
+terraform validate
+terraform plan
+terraform apply
+```
+
+## Sprzątanie
+```bash
+terraform destroy
+```
